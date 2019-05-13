@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74255f8e-cf7d-466b-a28f-759b6ea18712" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3821">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="337">
+              <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="59" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2564#2565#0" expanded="true" />
@@ -32,13 +30,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="337">
+              <caret line="102" column="81" selection-start-line="102" selection-start-column="81" selection-end-line="102" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4295#4296#0" expanded="true" />
+                <element signature="e#4325#4326#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,7 +128,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/view/Signin.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/view/Register.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/Belepve.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControlBelepve.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/ListMovies.fxml" />
@@ -141,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfFilm.java" />
         <option value="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfInside.java" />
         <option value="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java" />
       </list>
     </option>
   </component>
@@ -262,7 +262,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557778776504" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557779375823" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/javafx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -322,12 +322,12 @@
       <updated>1557688947957</updated>
       <workItem from="1557688949790" duration="17871000" />
       <workItem from="1557739344207" duration="7353000" />
-      <workItem from="1557768756837" duration="5734000" />
+      <workItem from="1557768756837" duration="6337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30958000" />
+    <option name="totallyTimeSpent" value="31561000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -507,16 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfInside.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -539,14 +529,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3821">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="337">
+          <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="59" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2564#2565#0" expanded="true" />
             <element signature="e#2594#2595#0" expanded="true" />
             <element signature="e#7821#7822#0" expanded="true" />
             <element signature="e#7849#7850#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="102" column="81" selection-start-line="102" selection-start-column="81" selection-end-line="102" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4295#4296#0" expanded="true" />
+            <element signature="e#4325#4326#0" expanded="true" />
           </folding>
         </state>
       </provider>

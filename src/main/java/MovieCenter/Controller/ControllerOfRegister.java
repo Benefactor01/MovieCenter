@@ -16,24 +16,36 @@ import javafx.scene.paint.Color;
 
 import java.io.IOException;
 
+/**
+ * {@code Controller} of the {@code Register} view.
+ */
 public class ControllerOfRegister {
 
+    /**
+     * These 2 variables are for the window to be able to dragged, as it is an undecorated window.
+     */
     private double xOffset = 0;
     private double yOffset = 0;
 
+    /**
+     * {@link TextField} where the {@code user} can write his/her username and email.
+     * {@link PasswordField} where the {@code user} can write his/her password.
+     * {@link Label} where the output of the register will be shown.
+     */
     @FXML private TextField usernameregister;
     @FXML private PasswordField passwordregister;
     @FXML private TextField emailregister;
     @FXML private Label labelregister;
 
-    //Átvált a bejelentkezés scene-re (signin.fxml)
+    /**
+     * It handles the click on button LogIn and makes the new fxml to be able to dragged.
+     * Loads the {@code Login.fxml} file, and set the new scene to it.
+     */
     @FXML
     private void register_LogIn() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Login.fxml"));
         Parent root = loader.load();
         ControllerOfLogin.guiStage.setScene(new Scene(root));
-
-        //mozgathatóvá teszi az ablakot
 
         ControllerOfLogin.guiStage.getScene().setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -51,6 +63,12 @@ public class ControllerOfRegister {
         });
     }
 
+    /**
+     * Handles the whole registration process,
+     * checks if all the requirements are filled, and if so
+     * than it creates a new user in the database.
+     * The {@link Label}'s value is changing depending on success or not.
+     */
     @FXML
     public void register_SendRegister () {
         if(!emailregister.getText().trim().contains("@") || !emailregister.getText().trim().contains(".")){
@@ -81,6 +99,9 @@ public class ControllerOfRegister {
         }
     }
 
+    /**
+     * Makes the little X button in the top right corner to exit the application.
+     */
     @FXML
     private void register_bezaras(ActionEvent event){
         System.exit(0);
