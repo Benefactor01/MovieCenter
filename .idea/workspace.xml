@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74255f8e-cf7d-466b-a28f-759b6ea18712" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java" afterDir="false" />
-    </list>
+    <list default="true" id="74255f8e-cf7d-466b-a28f-759b6ea18712" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="102" column="81" selection-start-line="102" selection-start-column="81" selection-end-line="102" selection-end-column="81" />
+            <state relative-caret-position="2200">
+              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4295#4296#0" expanded="true" />
@@ -262,7 +260,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557779375823" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557779494208" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/javafx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -322,12 +320,12 @@
       <updated>1557688947957</updated>
       <workItem from="1557688949790" duration="17871000" />
       <workItem from="1557739344207" duration="7353000" />
-      <workItem from="1557768756837" duration="6337000" />
+      <workItem from="1557768756837" duration="6455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31561000" />
+    <option name="totallyTimeSpent" value="31679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -543,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MovieCenter/Controller/ControllerOfRegister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="102" column="81" selection-start-line="102" selection-start-column="81" selection-end-line="102" selection-end-column="81" />
+        <state relative-caret-position="2200">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4295#4296#0" expanded="true" />
