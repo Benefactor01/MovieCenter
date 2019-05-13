@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="hatteroflogin" stylesheets="@css/looks.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieCenter.Controller.ControllerOfInside">
+   <children>
+      <HBox prefHeight="120.0" prefWidth="496.0" style="-fx-background-color: transparent;" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets top="-30.0" />
+               </HBox.margin>
+            </ImageView>
+            <MenuButton fx:id="menubutton1" mnemonicParsing="false" prefWidth="150.0" text="Movies">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </MenuButton>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button alignment="CENTER" graphicTextGap="0.0" maxHeight="24.0" maxWidth="24.0" mnemonicParsing="false" onAction="#belepve_bezaras" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/bezar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets right="-5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" layoutX="496.0" layoutY="10.0" prefHeight="100.0" prefWidth="246.0" AnchorPane.rightAnchor="60.0">
+         <children>
+            <MenuButton fx:id="menubutton2" mnemonicParsing="false" text="MenuButton">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+               <HBox.margin>
+                  <Insets right="10.0" top="5.0" />
+               </HBox.margin>
+            </MenuButton>
+         </children>
+      </HBox>
+      <HBox maxHeight="175.0" maxWidth="760.0" minHeight="175.0" minWidth="760.0" prefHeight="175.0" prefWidth="760.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <ImageView fx:id="img1" fitHeight="175.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img2" fitHeight="175.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="img3" fitHeight="175.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="img4" fitHeight="175.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

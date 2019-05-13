@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="hatteroflogin" stylesheets="@css/looks.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieCenter.Controller.ControllerOfFilm">
+   <children>
+      <HBox layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quciksand; -fx-font-weight: bolder; -fx-font-size: 2.4em; -fx-fill: white;" text="A film adatai:" wrappingWidth="189.13671875">
+               <effect>
+                  <DropShadow />
+               </effect></Text>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" layoutX="496.0" layoutY="10.0" prefHeight="100.0" prefWidth="246.0">
+         <children>
+            <MenuButton fx:id="menubutton2" mnemonicParsing="false" text="MenuButton">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </MenuButton>
+         </children>
+      </HBox>
+      <Button alignment="CENTER" graphicTextGap="0.0" layoutX="740.0" maxHeight="24.0" maxWidth="24.0" mnemonicParsing="false" onAction="#final_back" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" graphicTextGap="0.0" layoutX="765.0" maxHeight="24.0" maxWidth="24.0" mnemonicParsing="false" onAction="#final_bezaras" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bezar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <HBox layoutX="14.0" layoutY="79.0" prefHeight="500.0" prefWidth="750.0" AnchorPane.leftAnchor="25.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="375.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="imageFilm" fitHeight="175.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="375.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Cím:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label id="labelCim" fx:id="labelCim" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Label">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="375.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Rendező:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label id="labelRendezo" fx:id="labelRendezo" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Label">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="375.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Megjelenés:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label id="labelMegjelenes" fx:id="labelMegjelenes" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Label">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="375.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Kategória:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label id="labelKategoria" fx:id="labelKategoria" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Label">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="375.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Értékelés:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label id="labelErtekeles" fx:id="labelErtekeles" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Label">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="375.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Leírás:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label id="labelLeiras" fx:id="labelLeiras" alignment="TOP_LEFT" prefHeight="160.0" prefWidth="375.0" style="-fx-text-fill: white; -fx-wrap-text: true;" text="Label" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="375.0">
+               <children>
+                  <VBox prefHeight="500.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Értékeld a filmet:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Slider fx:id="slider" prefHeight="20.0" prefWidth="320.0" styleClass="axis" stylesheets="@css/slider.css" />
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#ertekeles" text="Szavazat küldése" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="20.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="ertesites" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold;" text="Eddigi értékelések:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="35.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox maxHeight="300.0" prefHeight="350.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="list" maxWidth="187.5" prefHeight="347.0" prefWidth="187.5" style="-fx-background-color: transparent;" />
+                              <ListView fx:id="list2" maxWidth="187.5" prefHeight="347.0" prefWidth="187.5" style="-fx-background-color: transparent;" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children></HBox>
+   </children>
+</AnchorPane>
