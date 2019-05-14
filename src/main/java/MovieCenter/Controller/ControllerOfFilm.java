@@ -84,7 +84,7 @@ public class ControllerOfFilm implements Initializable {
         menubutton2.getItems().setAll(f1);
 
         movies movie = dbControl.getExactFilm(movieID);
-        imageFilm.setImage(new Image("/kepek/"+ movieID + ".jpg"));
+        imageFilm.setImage(new Image(getClass().getResource("/kepek/"+movieID+".jpg").toExternalForm()));
         labelCim.setText(movie.getTitle());
         labelRendezo.setText(movie.getRendezo());
         labelMegjelenes.setText(movie.getDate().toString());

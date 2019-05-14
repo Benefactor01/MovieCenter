@@ -9,4 +9,6 @@ public class Main {
     public static void main(String[] args) {
         Application.launch(ControllerOfLogin.class, args);
     }
+    //TODO teszteket írni
+    //TODO logot beletenni
 }
