@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 
@@ -86,7 +87,7 @@ public class ControllerOfLogin extends Application {
      */
     @FXML
     private void signin_bezaras(ActionEvent event){
-        System.exit(0);
+        guiStage.close();
     }
 
     /**
@@ -103,7 +104,6 @@ public class ControllerOfLogin extends Application {
      */
     @FXML
     private void signin_SendSignIn() {
-
         if(usernamesignin.getLength() > 15){
             labelsignin.setTextFill(Color.DARKRED);
             labelsignin.setStyle("-fx-font-weight: bold; -fx-font-size: 24;");
@@ -175,6 +175,7 @@ public class ControllerOfLogin extends Application {
                             });
                         }));
                 timeline.play();
+                Logger.info("Bejelentkeztél!");
             }
         }
     }

@@ -104,6 +104,6 @@ public class ControllerOfRegister {
      */
     @FXML
     private void register_bezaras(ActionEvent event){
-        System.exit(0);
+        ControllerOfLogin.guiStage.close();
     }
 }

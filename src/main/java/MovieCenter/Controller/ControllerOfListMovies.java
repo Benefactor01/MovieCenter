@@ -65,7 +65,7 @@ public class ControllerOfListMovies implements Initializable {
 
     /**Little red X in the top right corner to close the application.*/
     @FXML private void final_bezaras(ActionEvent event){
-        System.exit(0);
+        ControllerOfLogin.guiStage.close();
     }
 
     /**{@link GridPane} contains all the information of the movies.*/

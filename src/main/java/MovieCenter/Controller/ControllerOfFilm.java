@@ -124,7 +124,7 @@ public class ControllerOfFilm implements Initializable {
 
     /**Closes the program with the little red X on the top right as on any other scenes.*/
     @FXML private void final_bezaras(ActionEvent event){
-        System.exit(0);
+        ControllerOfLogin.guiStage.close();
     }
 
     /**Switches back to the previous {@code ListMovies} view and lists all the movies.*/

@@ -3,6 +3,7 @@ package MovieCenter.Controller;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -70,7 +71,7 @@ public class ControllerOfInside implements Initializable {
      */
     @FXML
     private void belepve_bezaras(ActionEvent event){
-        System.exit(0);
+        ControllerOfLogin.guiStage.close();
     }
 
     /**
