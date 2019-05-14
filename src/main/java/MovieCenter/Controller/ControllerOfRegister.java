@@ -1,6 +1,6 @@
 package MovieCenter.Controller;
 
-import MovieCenter.model.UserController;
+import MovieCenter.model.dbControl;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -92,7 +92,7 @@ public class ControllerOfRegister {
             labelregister.setText("Üres felhasználónév!");
         }
         if(!emailregister.getText().trim().isEmpty() && !usernameregister.getText().trim().isEmpty() && !passwordregister.getText().trim().isEmpty() && emailregister.getText().trim().contains("@") && emailregister.getText().trim().contains(".")){
-            UserController.createUser(usernameregister.getText(), passwordregister.getText(), emailregister.getText());
+            dbControl.createUser(usernameregister.getText(), passwordregister.getText(), emailregister.getText());
             labelregister.setTextFill(Color.LIMEGREEN);
             labelregister.setStyle("-fx-font-weight: bold; -fx-font-size: 24;");
             labelregister.setText("Sikeres regisztráció!");

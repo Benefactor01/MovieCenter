@@ -1,6 +1,6 @@
 package MovieCenter.Controller;
 
-import MovieCenter.model.UserController;
+import MovieCenter.model.dbControl;
 import MovieCenter.model.tables.movies;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static MovieCenter.model.UserController.*;
+import static MovieCenter.model.dbControl.*;
 
 /**
  * {@code Controller} of the {@code Film} view.
@@ -82,7 +82,7 @@ public class ControllerOfFilm implements Initializable {
         });
         menubutton2.getItems().setAll(f1);
 
-        movies movie = UserController.getExactFilm(movieID);
+        movies movie = dbControl.getExactFilm(movieID);
         imageFilm.setImage(new Image("/kepek/"+ movieID + ".jpg"));
         labelCim.setText(movie.getTitle());
         labelRendezo.setText(movie.getRendezo());
@@ -146,7 +146,7 @@ public class ControllerOfFilm implements Initializable {
      */
     @FXML private void ertekeles(ActionEvent event){
         if(ertekelesExists(getUserIDfromName(menubutton2.getText()),movieID) == 0)
-            UserController.newRate(getUserIDfromName(menubutton2.getText()),movieID, (int)slider.getValue());
+            dbControl.newRate(getUserIDfromName(menubutton2.getText()),movieID, (int)slider.getValue());
         else{
             ertesites.setStyle("-fx-text-fill: red");
             ertesites.setText("Már értékelted a filmet!");

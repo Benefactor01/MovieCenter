@@ -1,6 +1,6 @@
 package MovieCenter.Controller;
 
-import MovieCenter.model.UserController;
+import MovieCenter.model.dbControl;
 import MovieCenter.model.tables.movies;
 import MovieCenter.model.tables.moviesErtekeles;
 import javafx.event.ActionEvent;
@@ -59,7 +59,7 @@ public class ControllerOfListMovies implements Initializable {
             deck.add(new Image("/kepek/"+ i + ".jpg"));
         }
         gombok();
-        moviesList = UserController.getmovies();
+        moviesList = dbControl.getmovies();
         gridInit();
     }
 
@@ -129,7 +129,7 @@ public class ControllerOfListMovies implements Initializable {
         List<String> Votes = new ArrayList<>();
 
         List<moviesErtekeles> ertekeles;
-        ertekeles = UserController.getallertekeles();
+        ertekeles = dbControl.getallertekeles();
 
         Double[] ert = new Double[numberofmovies];
         Double[] count = new Double[numberofmovies];

@@ -1,6 +1,6 @@
 package MovieCenter.Controller;
 
-import MovieCenter.model.UserController;
+import MovieCenter.model.dbControl;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -126,17 +126,17 @@ public class ControllerOfLogin extends Application {
             labelsignin.setText("Üres felhasználónév!");
         }
         if(!usernamesignin.getText().trim().isEmpty() && !passwordsignin.getText().trim().isEmpty() && usernamesignin.getLength() <= 15 && passwordsignin.getLength() <= 20){
-            if(UserController.login(usernamesignin.getText(), passwordsignin.getText()) == -2){
+            if(dbControl.login(usernamesignin.getText(), passwordsignin.getText()) == -2){
                 labelsignin.setTextFill(Color.DARKRED);
                 labelsignin.setStyle("-fx-font-weight: bold; -fx-font-size: 24;");
                 labelsignin.setText("Nincs ilyen felhasználó!");
             }
-            if(UserController.login(usernamesignin.getText(), passwordsignin.getText()) == -1){
+            if(dbControl.login(usernamesignin.getText(), passwordsignin.getText()) == -1){
                 labelsignin.setTextFill(Color.DARKRED);
                 labelsignin.setStyle("-fx-font-weight: bold; -fx-font-size: 24;");
                 labelsignin.setText("Hibás jelszó!");
             }
-            if(UserController.login(usernamesignin.getText(), passwordsignin.getText()) == 1){
+            if(dbControl.login(usernamesignin.getText(), passwordsignin.getText()) == 1){
                 labelsignin.setTextFill(Color.LIMEGREEN);
                 labelsignin.setStyle("-fx-font-weight: bold; -fx-font-size: 24;");
                 labelsignin.setText("Sikeres bejelentkezés!");

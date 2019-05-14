@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class UserController {
+public class dbControl {
 
     private static EntityManagerFactory emf;
     private static EntityManager em;
