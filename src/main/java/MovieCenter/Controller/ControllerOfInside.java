@@ -79,7 +79,7 @@ public class ControllerOfInside implements Initializable {
      */
     private void kepekbetoltese(){
         for (int i = numberofmovies -1; i >= 0; i--) {
-            deck.add(new Image("/kepek/"+ i + ".jpg"));
+            deck.add(new Image(getClass().getClassLoader().getResourceAsStream("kepek/"+i+".jpg")));
         }
     }
 

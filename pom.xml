@@ -12,7 +12,13 @@
 	<description>
 		The program, called MovieCenter is a platform, where you can get data from a lot of different movies, including rating. Even you can rate the movies with the help of it.
 	</description>
-	
+
+    <inceptionYear>2019</inceptionYear>
+    <organization>
+        <name>Szabolcs Katona</name>
+        <url>https://github.com/Benefactor01/MovieCenter</url>
+    </organization>
+
 	<developers>
 		<developer>
 			<name>Szabolcs Katona</name>
