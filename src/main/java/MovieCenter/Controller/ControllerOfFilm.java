@@ -19,28 +19,54 @@ import java.util.ResourceBundle;
 
 import static MovieCenter.model.UserController.*;
 
+/**
+ * {@code Controller} of the {@code Film} view.
+ */
 public class ControllerOfFilm implements Initializable {
 
+    /**
+     * The {@code movieID} is the key to select the chosen film's data.
+     * It is set by other controllers mainly.
+     */
     public static int movieID;
+
+    /** This variable is also set from other controllers and is holding the rate of the chosen film. */
     public static String ertekeles;
+
+    /**Place where the image of the movie will be shown.*/
     @FXML ImageView imageFilm;
 
+    /**Labels are containing the attributes of the movies. Like it's title, director, etc..*/
     @FXML Label labelCim;
     @FXML Label labelRendezo;
     @FXML Label labelMegjelenes;
     @FXML Label labelKategoria;
     @FXML Label labelErtekeles;
     @FXML Label labelLeiras;
+
+    /**With the help of this slider, the signed in user can rate the films.*/
     @FXML Slider slider;
+
+    /**Sends the rate, and save it in the database.*/
     @FXML MenuButton menubutton2;
+
+    /**Lists all the users who rated the film, and also the rate itself.*/
     @FXML ListView list, list2;
+
+    /**If any errors occurred during the rate, this label will show the massage of the error.*/
     @FXML Label ertesites;
 
-    //Belépett felhasználó nevének kiiírása
+    /**Shows the user who is logged in the application.*/
     public void transferMessage(String message) {
         menubutton2.setText(message);
     }
 
+    /**The initialization of the whole scene.
+     * Sets all the texts for the labels, initializes the users button
+     * where the username is shown.
+     * The {@code getExactFilm} gets the movie's attributes from the database
+     * when you provide an existing ID to it.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         MenuItem f1 = new MenuItem("Kilépés");
@@ -76,6 +102,10 @@ public class ControllerOfFilm implements Initializable {
         listfeltoltes();
     }
 
+    /**Gets all the rates from the database for the chosen film.
+     * If there is none, it will tell you that there is no rates
+     * on that film yet. If there is any, it list all of them.
+     */
     private void listfeltoltes(){
         List<Object[]> ertekelesek = getRateByUsername(movieID);
         if(!ertekelesek.isEmpty()){
@@ -91,9 +121,12 @@ public class ControllerOfFilm implements Initializable {
         }
     }
 
+    /**Closes the program with the little red X on the top right as on any other scenes.*/
     @FXML private void final_bezaras(ActionEvent event){
         System.exit(0);
     }
+
+    /**Switches back to the previous {@code ListMovies} view and lists all the movies.*/
     @FXML private void final_back(ActionEvent event){
         FXMLLoader belep = new FXMLLoader(getClass().getClassLoader().getResource("view/ListMovies.fxml"));
         Parent root = null;
@@ -106,6 +139,11 @@ public class ControllerOfFilm implements Initializable {
         transfer2.transferMessage(menubutton2.getText());
         ControllerOfLogin.guiStage.setScene(new Scene(root));
     }
+
+    /**If the logged in user tries to rate the film, it sends the rate to the database
+     * in case he/she hasn't rated the film already. If there is a rate on that name already,
+     * the {@code ertesites} will tell it.
+     */
     @FXML private void ertekeles(ActionEvent event){
         if(ertekelesExists(getUserIDfromName(menubutton2.getText()),movieID) == 0)
             UserController.newRate(getUserIDfromName(menubutton2.getText()),movieID, (int)slider.getValue());

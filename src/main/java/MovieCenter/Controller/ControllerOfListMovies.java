@@ -27,14 +27,32 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+/**
+ * {@code Controller} of the {@code ListMovies} view.
+ */
 public class ControllerOfListMovies implements Initializable {
+
+    /**
+     * These 2 variables are for the window to be able to dragged, as it is an undecorated window.
+     */
     private double xOffset = 0;
     private double yOffset = 0;
-    private int numberofmovies = 20; //A 20 a képek száma
+
+    /**The number of movies in the database.*/
+    private int numberofmovies = 20;
+
+    /**Hold all the images of the movies.*/
     private List<Image> deck = new ArrayList<>();
-    List<movies> moviesList;
+
+    /**The list of the films, directly from the database.*/
+    private List<movies> moviesList;
+
+    /**Contains the average rates on the films.*/
     private List<Label> labelVoteAvg;
 
+    /**Loads all the pictures. These would be the movies' covers.
+     * Also it initializes the buttons, and the whole grid, where all
+     * the information is shown about the films.*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (int i = numberofmovies -1; i >= 0; i--) {
@@ -45,18 +63,22 @@ public class ControllerOfListMovies implements Initializable {
         gridInit();
     }
 
+    /**Little red X in the top right corner to close the application.*/
     @FXML private void final_bezaras(ActionEvent event){
         System.exit(0);
     }
+
+    /**{@link GridPane} contains all the information of the movies.*/
     @FXML GridPane grid;
     @FXML private MenuButton menubutton1;
     @FXML private MenuButton menubutton2;
 
-    //Belépett felhasználó nevének kiiírása
+    /**Writes the logged in username on the button in the top right corner.*/
     public void transferMessage(String message) {
         menubutton2.setText(message);
     }
 
+    /**Initializes the main buttons, such as the logout button, the random movie button.*/
     private void gombok(){
         MenuItem f1 = new MenuItem("Kilépés");
         f1.setOnAction(event -> {
@@ -94,6 +116,11 @@ public class ControllerOfListMovies implements Initializable {
         menubutton1.getItems().setAll(m1, m2);
     }
 
+    /**The main part of this scene that consists of a lot of information.
+     * It is a {@link GridPane} that holds all the information about the movies.
+     * The {@code Title} is a List of buttons (it is converted at the end)
+     * so if you click on a name of any films, it loads the information about it.
+     */
     private void gridInit() {
         List<String> Title = new ArrayList<>();
         List<String> Rendezo = new ArrayList<>();

@@ -1,5 +1,6 @@
 package MovieCenter.Controller;
 
+import MovieCenter.model.UserController;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -27,7 +28,6 @@ import java.util.ResourceBundle;
  * {@code Controller} of the {@code Belepve} view.
  */
 public class ControllerOfInside implements Initializable {
-
     /**
      * It loads with the new fxml.
      * The {@code kepekbetoltese} loads the pictures for the image slider.
@@ -40,7 +40,6 @@ public class ControllerOfInside implements Initializable {
         slideshow();
         gombok();
     }
-
     /**
      * These 2 variables are for the window to be able to dragged, as it is an undecorated window.
      */

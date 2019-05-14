@@ -17,7 +17,9 @@ public class UserController {
     private static EntityManagerFactory emf;
     private static EntityManager em;
 
-
+    /**Inserts a new user into the database's users table.
+     * All {@link String} are given from the {@code Register} view's fields.
+     */
     public static void createUser(String username, String password, String email){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
@@ -37,6 +39,11 @@ public class UserController {
 
     }
 
+    /**Checks for existing {@code username} and {@code password} combination.
+     * It the given information are correct, it returns 1, and that means
+     * you are logged in successfully. The {@code ControllerOfRegister} controls
+     * the whole process and all the returned values.
+     */
     public static int login(String username, String password){
 
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
@@ -69,8 +76,7 @@ public class UserController {
         return 0;
     }
 
-
-    //Filmek listázása
+    /**Makes a list of the movies from the database, and all attributes of the them.*/
     public static List<movies> getmovies(){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
@@ -86,6 +92,7 @@ public class UserController {
         return result;
     }
 
+    /**Makes a list of the rates from the database.*/
     public static List<moviesErtekeles> getallertekeles(){
 
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
@@ -102,6 +109,7 @@ public class UserController {
         return result;
     }
 
+    /**Returns the exact movie with the ID given.*/
     public static movies getExactFilm(int ID){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
@@ -117,6 +125,7 @@ public class UserController {
         return result.get(0);
     }
 
+    /**Returns the username of the given name.*/
     public static int getUserIDfromName(String name){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
@@ -131,6 +140,7 @@ public class UserController {
         return result.get(0).getId();
     }
 
+    /**Inserts a new row into the rates. This is handled by the {@code Film} view.*/
     public static void newRate(int UserID, int MovieID, int Rate){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
@@ -149,6 +159,8 @@ public class UserController {
         emf.close();
     }
 
+    /**Returns a list of object arrays, containing all the rates.
+     * With the help of this query, the program fills the lists on the {@code Film} view.*/
     public static List<Object[]> getRateByUsername(int ID){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
@@ -165,6 +177,8 @@ public class UserController {
         return results;
     }
 
+    /**It is necessary to prevent multiple rates from the same user.
+     * Checks if there is already a rate from the logged in user.*/
     public static int ertekelesExists(int UserID, int movieID){
         emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
         em = emf.createEntityManager();
