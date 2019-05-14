@@ -73,7 +73,8 @@ public class ControllerOfListMovies implements Initializable {
     @FXML private MenuButton menubutton1;
     @FXML private MenuButton menubutton2;
 
-    /**Writes the logged in username on the button in the top right corner.*/
+    /**Writes the logged in username on the button in the top right corner.
+     * @param message contains the username in string type */
     public void transferMessage(String message) {
         menubutton2.setText(message);
     }

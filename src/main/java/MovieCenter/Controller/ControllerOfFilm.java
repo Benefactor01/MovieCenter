@@ -56,7 +56,8 @@ public class ControllerOfFilm implements Initializable {
     /**If any errors occurred during the rate, this label will show the massage of the error.*/
     @FXML Label ertesites;
 
-    /**Shows the user who is logged in the application.*/
+    /**Shows the user who is logged in the application.
+     * @param message contains the username in string type*/
     public void transferMessage(String message) {
         menubutton2.setText(message);
     }

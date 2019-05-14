@@ -210,6 +210,7 @@ public class ControllerOfLogin extends Application {
         });
     }
 
+    /**@param args is a string array for the terminal input*/
     public static void main(String[] args) {
         launch(args);
     }

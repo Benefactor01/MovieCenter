@@ -135,7 +135,8 @@ public class ControllerOfInside implements Initializable {
     }
 
     /**Write the username on the button in the top right corner.
-     * This method is called from the Login view.*/
+     * This method is called from the Login view.
+     * @param message contains the username in string type */
     public void transferMessage(String message) {
         menubutton2.setText(message);
     }

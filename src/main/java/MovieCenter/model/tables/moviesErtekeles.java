@@ -2,6 +2,7 @@ package MovieCenter.model.tables;
 
 import javax.persistence.*;
 
+/**Class that represent the rates in the database.*/
 @Entity
 public class moviesErtekeles {
 
@@ -19,38 +20,48 @@ public class moviesErtekeles {
     @Column(name = "ertekeles")
     private int ertekeles;
 
-    public int getErtekelesID() {
-        return ertekelesID;
-    }
+    /**Getter of the rate ID.
+     * @return returns the ID of the rate.*/
+    public int getErtekelesID() { return ertekelesID; }
 
-    public void setErtekelesID(int ertekelesID) {
-        this.ertekelesID = ertekelesID;
-    }
+    /**Setter of the rate ID.
+     * @param ertekelesID is the new value of the rate.*/
+    public void setErtekelesID(int ertekelesID) { this.ertekelesID = ertekelesID; }
 
-    public int getUserID() {
-        return userID;
-    }
+    /**Getter of the user ID.
+     * @return the value of user ID.*/
+    public int getUserID() { return userID; }
 
+    /**Setter of the user ID.
+     * @param userID is the new value of the user ID.*/
     public void setUserID(int userID) {
         this.userID = userID;
     }
 
-    public int getMovieID() {
-        return movieID;
-    }
+    /**Getter of the movie ID.
+     * @return the ID of the movie.*/
+    public int getMovieID() { return movieID; }
 
-    public void setMovieID(int movieID) {
-        this.movieID = movieID;
-    }
+    /**Setter of the movie ID.
+     * @param movieID is the ID of the movie.*/
+    public void setMovieID(int movieID) { this.movieID = movieID; }
 
+    /**Getter of the rate.
+     * @return the value of rate.*/
     public int getErtekeles() {
         return ertekeles;
     }
 
+    /**Setter of the rate.
+     * @param ertekeles is the new value of the rate.*/
     public void setErtekeles(int ertekeles) {
         this.ertekeles = ertekeles;
     }
 
+    /**Constructor for the rates.
+     * @param userID is the user ID.
+     * @param movieID is the movie ID.
+     * @param ertekeles is the rate on the movie.*/
     public moviesErtekeles(int userID, int movieID, int ertekeles) {
         this.userID = userID;
         this.movieID = movieID;
@@ -67,5 +78,6 @@ public class moviesErtekeles {
                 '}';
     }
 
+    /**Empty constructor for the rates.*/
     public moviesErtekeles(){}
 }
