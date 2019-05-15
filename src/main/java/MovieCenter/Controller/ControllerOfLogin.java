@@ -88,6 +88,7 @@ public class ControllerOfLogin extends Application {
     @FXML
     private void signin_bezaras(ActionEvent event){
         guiStage.close();
+        dbControl.closeDB();
     }
 
     /**
@@ -156,6 +157,7 @@ public class ControllerOfLogin extends Application {
                             transfer1.transferMessage(usernamesignin.getText());
 
                             guiStage.close();
+                            Logger.info("Sikeres bejelentkezés!");
                             guiStage.setScene(new Scene(root, 800, 600));
                             guiStage.show();
 
@@ -187,6 +189,7 @@ public class ControllerOfLogin extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
+        dbControl.initDB();
         guiStage = stage;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Login.fxml"));
         Parent root = loader.load();

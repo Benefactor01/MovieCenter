@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -72,7 +73,7 @@ public class ControllerOfFilm implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         MenuItem f1 = new MenuItem("Kilépés");
         f1.setOnAction(event -> {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Signin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
             Parent root = null;
             try {
                 root = loader.load();
@@ -80,6 +81,7 @@ public class ControllerOfFilm implements Initializable {
                 e.printStackTrace();
             }
             ControllerOfLogin.guiStage.setScene(new Scene(root));
+            Logger.info("Sikeres kijelentkezés!");
         });
         menubutton2.getItems().setAll(f1);
 
@@ -124,6 +126,7 @@ public class ControllerOfFilm implements Initializable {
 
     /**Closes the program with the little red X on the top right as on any other scenes.*/
     @FXML private void final_bezaras(ActionEvent event){
+        dbControl.closeDB();
         ControllerOfLogin.guiStage.close();
     }
 
@@ -139,6 +142,7 @@ public class ControllerOfFilm implements Initializable {
         ControllerOfListMovies transfer2 = belep.getController();
         transfer2.transferMessage(menubutton2.getText());
         ControllerOfLogin.guiStage.setScene(new Scene(root));
+        Logger.info("Visszalépés a filmlistára!");
     }
 
     /**If the logged in user tries to rate the film, it sends the rate to the database

@@ -1,5 +1,6 @@
 package MovieCenter.Controller;
 
+import MovieCenter.model.dbControl;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -17,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -71,7 +73,9 @@ public class ControllerOfInside implements Initializable {
      */
     @FXML
     private void belepve_bezaras(ActionEvent event){
+        dbControl.closeDB();
         ControllerOfLogin.guiStage.close();
+
     }
 
     /**
@@ -93,6 +97,7 @@ public class ControllerOfInside implements Initializable {
      * It is set to {@code INDEFINITE} so it will run until the program is closed.
      */
     private void slideshow(){
+        Logger.info("Image slider betöltve!");
         img1.setImage(deck.get(numberofmovies -3));
         img2.setImage(deck.get(numberofmovies -2));
         img3.setImage(deck.get(numberofmovies -1));
@@ -163,6 +168,7 @@ public class ControllerOfInside implements Initializable {
             transfer2.transferMessage(menubutton2.getText());
 
             ControllerOfLogin.guiStage.setScene(new Scene(root));
+            Logger.info("Film lista scene-re átlépve!");
 
             ControllerOfLogin.guiStage.getScene().setOnMousePressed(new EventHandler<MouseEvent>() {
                 @Override
@@ -193,6 +199,7 @@ public class ControllerOfInside implements Initializable {
                 e.printStackTrace();
             }
             ControllerOfLogin.guiStage.setScene(new Scene(root));
+            Logger.info("Sikeres kijelentkezés!");
         });
         menubutton2.getItems().setAll(f1);
     }

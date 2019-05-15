@@ -18,6 +18,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -65,6 +67,7 @@ public class ControllerOfListMovies implements Initializable {
 
     /**Little red X in the top right corner to close the application.*/
     @FXML private void final_bezaras(ActionEvent event){
+        dbControl.closeDB();
         ControllerOfLogin.guiStage.close();
     }
 
@@ -83,7 +86,7 @@ public class ControllerOfListMovies implements Initializable {
     private void gombok(){
         MenuItem f1 = new MenuItem("Kilépés");
         f1.setOnAction(event -> {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Signin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
             Parent root = null;
             try {
                 root = loader.load();
@@ -91,6 +94,7 @@ public class ControllerOfListMovies implements Initializable {
                 e.printStackTrace();
             }
             ControllerOfLogin.guiStage.setScene(new Scene(root));
+            Logger.info("Sikeres kijelentkezés!");
         });
         menubutton2.getItems().setAll(f1);
 
@@ -112,6 +116,7 @@ public class ControllerOfListMovies implements Initializable {
             transfer3.transferMessage(menubutton2.getText());
 
             ControllerOfLogin.guiStage.setScene(new Scene(root));
+            Logger.info("Random filmre átlépve!");
         });
         menubutton1.setText("Movies");
         menubutton1.getItems().setAll(m1, m2);
@@ -122,16 +127,15 @@ public class ControllerOfListMovies implements Initializable {
      * The {@code Title} is a List of buttons (it is converted at the end)
      * so if you click on a name of any films, it loads the information about it.
      */
-    private void gridInit() {
-        List<String> Title = new ArrayList<>();
-        List<String> Rendezo = new ArrayList<>();
-        List<String> Date = new ArrayList<>();
-        List<String> Category = new ArrayList<>();
-        List<String> Votes = new ArrayList<>();
 
-        List<moviesErtekeles> ertekeles;
-        ertekeles = dbControl.getallertekeles();
+    private List<String> Votes = new ArrayList<>();
+    private List<moviesErtekeles> ertekeles = dbControl.getallertekeles();
 
+    /**Returns all the averages of the movie rates.
+     * @param ertekeles is a list of moviesErtekeles class
+     * @param numberofmovies is the number of movies in the database
+     * @return an array of doubles containing all the avarages of the rates.*/
+    public static Double[] atlag(List<moviesErtekeles> ertekeles, int numberofmovies){
         Double[] ert = new Double[numberofmovies];
         Double[] count = new Double[numberofmovies];
         Double[] atlag = new Double[numberofmovies];
@@ -154,13 +158,24 @@ public class ControllerOfListMovies implements Initializable {
                 atlag[i] = ert[i] / count[i];
             }
         }
+        return atlag;
+    }
+
+    private void gridInit() {
+        List<String> Title = new ArrayList<>();
+        List<String> Rendezo = new ArrayList<>();
+        List<String> Date = new ArrayList<>();
+        List<String> Category = new ArrayList<>();
+
+        Double[] atlagok = atlag(ertekeles, numberofmovies);
+
 
         for (int i = 0; i <= numberofmovies-1; i++) {
             Title.add(moviesList.get(i).getTitle());
             Rendezo.add(moviesList.get(i).getRendezo());
             Date.add(moviesList.get(i).getDate().toString());
             Category.add(moviesList.get(i).getCategory());
-            Votes.add(atlag[i].toString());
+            Votes.add(atlagok[i].toString());
         }
 
         List<Button> labelTitle = Title
@@ -223,6 +238,8 @@ public class ControllerOfListMovies implements Initializable {
                 ControllerOfFilm transfer3 = belep.getController();
                 transfer3.transferMessage(menubutton2.getText());
                 ControllerOfLogin.guiStage.setScene(new Scene(root));
+
+                Logger.info(ControllerOfFilm.movieID+" ID-el rendelkező filmre átlépve!");
 
                 ControllerOfLogin.guiStage.getScene().setOnMousePressed(new EventHandler<MouseEvent>() {
                     @Override

@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 
@@ -96,6 +97,7 @@ public class ControllerOfRegister {
             labelregister.setTextFill(Color.LIMEGREEN);
             labelregister.setStyle("-fx-font-weight: bold; -fx-font-size: 24;");
             labelregister.setText("Sikeres regisztráció!");
+            Logger.info("Sikeres regisztráció!");
         }
     }
 
@@ -104,6 +106,7 @@ public class ControllerOfRegister {
      */
     @FXML
     private void register_bezaras(ActionEvent event){
+        dbControl.closeDB();
         ControllerOfLogin.guiStage.close();
     }
 }
